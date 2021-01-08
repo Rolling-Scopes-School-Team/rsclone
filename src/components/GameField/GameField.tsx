@@ -3,6 +3,7 @@
 import React from 'react';
 
 import styles from '@/components/GameField/index.scss';
+// import GameLogo from '@/components/icons/GameLogo';
 
 const GameField: React.FC = () => (
   <div className={styles['main']}>
