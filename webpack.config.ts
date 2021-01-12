@@ -30,6 +30,7 @@ const formStylesRule = (useModules = false) => ({
       },
     },
     'sass-loader',
+    'postcss-loader',
   ],
 });
 
