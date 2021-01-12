@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TableExample from '@/components/TableExample';
+import Deck from '@/components/Deck/Deck';
 
-const App = (): JSX.Element => <TableExample />;
+const App = (): JSX.Element => <Deck />;
 
 export default App;
