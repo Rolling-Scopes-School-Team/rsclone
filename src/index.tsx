@@ -1,4 +1,5 @@
 import '@/assets/stylesheets/index.scss';
+import 'tailwindcss/tailwind.css';
 
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
@@ -15,5 +16,5 @@ ReactDOM.render(
       </CookiesProvider>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

@@ -30,6 +30,7 @@ const formStylesRule = (useModules = false) => ({
       },
     },
     'sass-loader',
+    'postcss-loader',
   ],
 });
 
@@ -93,7 +94,7 @@ const config: Configuration = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.json', '.mjs', '.jsx', '.d.ts', '.ts', '.tsx'],
+    extensions: ['.wasm', '.js', '.json', '.mjs', '.cjs', '.jsx', '.d.ts', '.ts', '.tsx'],
     alias: {
       '@': resolve(__dirname, 'src'),
     },

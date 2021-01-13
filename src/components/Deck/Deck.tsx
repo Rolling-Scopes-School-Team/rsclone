@@ -4,7 +4,7 @@ import CardComponent from '@/components/Deck/Card/Card';
 import cardData from '@/components/Deck/cardData';
 
 const Deck = (): JSX.Element => (
-  <div>
+  <div className="flex flex-col flex-wrap">
     {Object.keys(cardData).map(e => {
       const arr = [];
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
