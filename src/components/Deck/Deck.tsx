@@ -1,16 +1,24 @@
 import React from 'react';
 
-import CardComponent from '@/components/Deck/Card/Card';
+import Card from '@/components/Deck/Card/Card';
 import cardData from '@/components/Deck/cardData';
+import { ICard } from '@/components/Deck/types/types';
+
+const colors: string[] = ['red', 'blue', 'green', 'yellow'];
 
 const Deck = (): JSX.Element => (
-  <div className="flex flex-col flex-wrap">
+  <div className="flex flex-row flex-wrap w-12/12">
     {Object.keys(cardData).map(e => {
+      const el = cardData[e] as ICard;
       const arr = [];
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      for (let i = 0; i < cardData[e].countOfCards; i += 1) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        arr.push(<CardComponent card={cardData[e]} />);
+      for (let i = 0; i < el.countOfCards; i += 1) {
+        if (el.fourColors) {
+          for (let k = 0; k < 4; k += 1) {
+            arr.push(<Card card={el} background={colors[k]} />);
+          }
+        } else {
+          arr.push(<Card card={el} background="dark" />);
+        }
       }
       return arr;
     })}

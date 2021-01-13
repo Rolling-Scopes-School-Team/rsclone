@@ -2,14 +2,14 @@ import React, { Fragment } from 'react';
 
 import Deck from '@/components/Deck/Deck';
 import GameField from '@/components/GameField';
-// import LazyImagesExample from '@/components/LazyImagesExample';
-// import TableExample from '@/components/TableExample';
+import LazyImagesExample from '@/components/LazyImagesExample';
+import TableExample from '@/components/TableExample';
 
 const App = (): JSX.Element => (
   <Fragment>
     <Deck />
-    {/* <TableExample />*/}
-    {/* <LazyImagesExample />*/}
+    <TableExample />
+    <LazyImagesExample />
     <GameField />
   </Fragment>
 );

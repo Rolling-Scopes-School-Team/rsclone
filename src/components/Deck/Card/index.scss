@@ -1,0 +1,45 @@
+.card {
+  @apply
+  max-w-card-w-l
+  min-h-card-h-l
+  flex
+  flex-col
+  bg-blue-600
+  items-end
+  relative
+  m-0.5
+  text-white
+  font-roboto
+  border-gray-200
+  border
+  rounded
+  font-normal
+  transform
+  hover:scale-105 cursor-pointer
+  leading-9;
+  min-width: 106px;
+}
+.cardTop {
+  @apply self-start text-2xl absolute top-1 left-1.5 leading-6;
+}
+.cardCenter {
+  @apply self-center text-5xl absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-1/2;
+}
+.cardBottom {
+  @apply self-end text-2xl transform rotate-180 absolute bottom-1 right-1.5 leading-6;
+}
+.dark {
+  background: rgba(40, 37, 37, 1);
+}
+.yellow {
+  background: rgba(255, 208, 55, 1);
+}
+.green {
+  background: rgba(148, 212, 50, 1);
+}
+.blue {
+  background: rgba(20, 113, 192, 1);
+}
+.red {
+  background: rgba(224, 50, 26, 1);
+}

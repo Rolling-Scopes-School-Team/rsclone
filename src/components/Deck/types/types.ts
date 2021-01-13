@@ -17,6 +17,7 @@ export type ICardData = {
 };
 
 export interface Card {
+  background: string;
   card: {
     countOfCards: number;
     description: string;
