@@ -18,6 +18,11 @@
   @apply py-2 px-4 rounded-full focus:outline-none border-orange border-2;
 }
 
+.btn {
+  @apply py-2 w-full text-white bg-orange rounded-full font-sans font-medium
+  hover:bg-yellow-500 transition-colors duration-100 focus:outline-none;
+}
+
 .close {
   @apply absolute top-5 right-5 text-white focus:outline-none hover:text-orange;
 

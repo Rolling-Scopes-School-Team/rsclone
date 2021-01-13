@@ -21,6 +21,9 @@ const Authorize: FC = (): JSX.Element => {
                 <div className={styles.title}>Login</div>
                 <input className={styles.input} type="email" placeholder="E-mail" />
                 <input className={styles.input} type="password" placeholder="Password" />
+                <button className={styles.btn} type="button">
+                  Sign In
+                </button>
                 <button
                   className={styles.link}
                   type="button"
@@ -38,6 +41,9 @@ const Authorize: FC = (): JSX.Element => {
                 <input className={styles.input} type="text" placeholder="Name" />
                 <input className={styles.input} type="email" placeholder="E-mail" />
                 <input className={styles.input} type="password" placeholder="Password" />
+                <button className={styles.btn} type="button">
+                  Sign Up
+                </button>
                 <button className={styles.link} type="button" onClick={() => setOption('login')}>
                   Login
                 </button>
