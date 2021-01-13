@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react';
 
-import GameField from '@/components/GameField';
-import LazyImagesExample from '@/components/LazyImagesExample';
-import TableExample from '@/components/TableExample';
+// import GameField from '@/components/GameField';
+// import Intro from '@/components/Intro';
+
+import Authorize from './components/Authorize';
 
 const App = (): JSX.Element => (
   <Fragment>
-    <TableExample />
-    <LazyImagesExample />
-    <GameField />
+    {/* <GameField /> */}
+    {/* <Intro /> */}
+    <Authorize />
   </Fragment>
 );
 

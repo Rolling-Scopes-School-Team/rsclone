@@ -1,0 +1,27 @@
+.authorize {
+  @apply min-w-full min-h-screen flex justify-center items-center;
+}
+
+.form {
+  @apply flex flex-col items-center gap-3;
+}
+
+.title {
+  @apply self-start text-orange underline;
+}
+
+.link {
+  @apply self-end text-white focus:outline-none;
+}
+
+.input {
+  @apply py-2 px-4 rounded-full focus:outline-none border-orange border-2;
+}
+
+.close {
+  @apply absolute top-5 right-5 text-white focus:outline-none hover:text-orange;
+
+  svg {
+    @apply h-8 w-8;
+  }
+}
