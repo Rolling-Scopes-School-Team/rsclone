@@ -8,14 +8,15 @@ module.exports = {
         gray: '#262626',
         orange: '#faad14',
       },
-    maxWidth: {
-      'card-w-l': '6.75rem',
-    },
-    minHeight: {
-      'card-h-l': '10.125rem',
-    },
-    fontFamily: {
-      roboto: ['Roboto', 'sans-serif'],
+      maxWidth: {
+        'card-w-l': '6.75rem',
+      },
+      minHeight: {
+        'card-h-l': '10.125rem',
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
     },
   },
   variants: {
