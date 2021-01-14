@@ -1,5 +1,6 @@
-import '@/assets/stylesheets/index.scss';
+import 'antd/dist/antd.css';
 import 'tailwindcss/tailwind.css';
+import '@/assets/stylesheets/index.scss';
 
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
