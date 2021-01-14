@@ -1,14 +1,10 @@
 import React, { Fragment } from 'react';
 
-import GameField from '@/components/GameField';
-import LazyImagesExample from '@/components/LazyImagesExample';
-import TableExample from '@/components/TableExample';
+import AppRouter from './components/AppRouter';
 
 const App = (): JSX.Element => (
   <Fragment>
-    <TableExample />
-    <LazyImagesExample />
-    <GameField />
+    <AppRouter />
   </Fragment>
 );
 
