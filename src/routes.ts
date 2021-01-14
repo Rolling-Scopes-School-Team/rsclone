@@ -1,5 +1,4 @@
 import Authorize from '@/components/Authorize';
-
 import Intro from '@/components/Intro';
 
 import { AUTHORIZE_ROUTE, INTRO_ROUTE } from './utils/consts';
