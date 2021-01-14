@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 
-import Authorize from './components/Authorize';
+import AppRouter from './components/AppRouter';
 
 const App = (): JSX.Element => (
   <Fragment>
-    <Authorize />
+    <AppRouter />
   </Fragment>
 );
 
