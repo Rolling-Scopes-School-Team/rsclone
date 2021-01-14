@@ -1,0 +1,111 @@
+import { ICardData } from '@/components/Deck/types/types';
+
+const cardData: ICardData = {
+  zero: {
+    description: '0',
+    effect: null,
+    fourColors: true,
+    points: 0,
+    countOfCards: 1,
+  },
+  one: {
+    description: '1',
+    effect: null,
+    fourColors: true,
+    points: 1,
+    countOfCards: 2,
+  },
+  two: {
+    description: '2',
+    effect: null,
+    fourColors: true,
+    points: 2,
+    countOfCards: 2,
+  },
+  three: {
+    description: '3',
+    effect: null,
+    fourColors: true,
+    points: 3,
+    countOfCards: 2,
+  },
+  four: {
+    description: '4',
+    effect: null,
+    fourColors: true,
+    points: 4,
+    countOfCards: 2,
+  },
+  five: {
+    description: '5',
+    effect: null,
+    fourColors: true,
+    points: 5,
+    countOfCards: 2,
+  },
+  six: {
+    description: '6',
+    effect: null,
+    fourColors: true,
+    points: 6,
+    countOfCards: 2,
+  },
+  seven: {
+    description: '7',
+    effect: null,
+    fourColors: true,
+    points: 7,
+    countOfCards: 2,
+  },
+  eight: {
+    description: '8',
+    effect: null,
+    fourColors: true,
+    points: 8,
+    countOfCards: 2,
+  },
+  nine: {
+    description: '9',
+    effect: null,
+    fourColors: true,
+    points: 9,
+    countOfCards: 2,
+  },
+  skip: {
+    description: 'skip',
+    effect: 'skip',
+    fourColors: true,
+    points: 20,
+    countOfCards: 2,
+  },
+  reverse: {
+    description: 'reverse',
+    effect: 'reverse',
+    fourColors: true,
+    points: 20,
+    countOfCards: 2,
+  },
+  draw2: {
+    description: 'draw2',
+    effect: 'reverse',
+    fourColors: true,
+    points: 20,
+    countOfCards: 2,
+  },
+  wild: {
+    description: 'changeColor',
+    effect: 'changeColor',
+    fourColors: false,
+    points: 50,
+    countOfCards: 4,
+  },
+  wildDraw4: {
+    description: 'draw4Cards',
+    effect: 'changeColor draw4',
+    fourColors: false,
+    points: 50,
+    countOfCards: 4,
+  },
+};
+
+export default cardData;
