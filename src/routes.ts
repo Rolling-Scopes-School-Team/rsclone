@@ -1,7 +1,15 @@
 import Authorize from '@/components/Authorize';
+import CreateRoom from '@/components/CreateRoom';
 import Intro from '@/components/Intro';
+import NewGame from '@/components/NewGame';
 
-import { AUTHORIZE_ROUTE, INTRO_ROUTE } from './utils/consts';
+import {
+  AUTHORIZE_ROUTE,
+  INTRO_ROUTE,
+  NEW_GAME_ROUTE,
+  CREATE_ROOM,
+  WAIT_FOR_PLAYERS,
+} from './utils/consts';
 
 export const publicRoutes = [
   {
@@ -23,10 +31,18 @@ export const privateRoutes = [
     path: AUTHORIZE_ROUTE,
     Component: Authorize,
   },
-  // {
-  //   path: NEW_GAME_ROUTE,
-  //   Component: null,
-  // },
+  {
+    path: NEW_GAME_ROUTE,
+    Component: NewGame,
+  },
+  {
+    path: CREATE_ROOM,
+    Component: CreateRoom,
+  },
+  {
+    path: WAIT_FOR_PLAYERS,
+    Component: null,
+  },
   // {
   //   path: GAME_ROUTE,
   //   Component: null,

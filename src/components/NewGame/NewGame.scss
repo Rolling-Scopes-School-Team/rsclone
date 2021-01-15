@@ -1,0 +1,60 @@
+.newGame {
+  @apply flex justify-center items-center flex-col min-h-screen self-center;
+  color: rgba(240, 240, 240, 1);
+}
+.burger {
+  @apply fixed top-10 right-10;
+}
+.tableContainer {
+  @apply flex flex-col w-1/2 items-center;
+}
+.caption {
+  @apply pb-16 font-medium text-2xl;
+  color: rgba(240, 240, 240, 1);
+}
+.table {
+  @apply flex flex-col border min-w-full;
+  border: 1px solid #FAAD14;
+  border-radius: 3px;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-left: 1px solid #FAAD14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FAAD14;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  max-height: 30px;
+}
+
+.tableRow {
+  @apply flex flex-row justify-between cursor-pointer transform hover:bg-yellow-900;
+  padding: 12px 50px 12px 25px;
+  border-bottom: 1px solid #FAAD14;
+}
+.tableRowRoomInfo {
+  @apply flex flex-row items-center;
+}
+
+.btnContainer {
+  @apply pt-12 flex flex-row min-w-full justify-around;
+  @media (max-width: 500px) {
+    @apply flex-col justify-center items-center;
+  }
+}
+
+.btn {
+  @apply py-2 px-16 text-white border-orange border rounded-full font-medium
+  hover:bg-yellow-500 transition-colors duration-100 focus:outline-none;
+  @media (max-width: 500px) {
+    @apply w-full mb-5;
+  }
+}
