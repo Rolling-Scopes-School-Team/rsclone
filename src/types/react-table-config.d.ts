@@ -65,13 +65,13 @@ declare module 'react-table' {
     UsePaginationOptions<D>,
     UseResizeColumnsOptions<D>,
     UseRowSelectOptions<D>,
-    UseSortByOptions<D> { }
+    UseSortByOptions<D> {}
 
   export interface Hooks<D extends object = {}>
     extends UseExpandedHooks<D>,
     UseGroupByHooks<D>,
     UseRowSelectHooks<D>,
-    UseSortByHooks<D> { }
+    UseSortByHooks<D> {}
 
   export interface TableInstance<D extends object = {}>
     extends UseColumnOrderInstanceProps<D>,
@@ -83,7 +83,7 @@ declare module 'react-table' {
     UseRowSelectInstanceProps<D>,
     UseFlexLayoutInstanceProps<D>,
     UsePaginationInstanceProps<D>,
-    UseSortByInstanceProps<D> { }
+    UseSortByInstanceProps<D> {}
 
   export interface TableState<D extends object = {}>
     extends UseColumnOrderState<D>,
@@ -111,14 +111,14 @@ declare module 'react-table' {
     UseGroupByColumnProps<D>,
     UseResizeColumnsColumnProps<D>,
     UseFlexLayoutColumnProps<D>,
-    UseSortByColumnProps<D> { }
+    UseSortByColumnProps<D> {}
 
   export type Cell<D extends object = {}> = UseGroupByCellProps<D>;
 
   export interface Row<D extends object = {}>
     extends UseExpandedRowProps<D>,
     UseGroupByRowProps<D>,
-    UseRowSelectRowProps<D> { }
+    UseRowSelectRowProps<D> {}
 }
 
 export type TableMouseEventHandler<T extends object = {}> = (
