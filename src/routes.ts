@@ -2,6 +2,7 @@ import Authorize from '@/components/Authorize';
 import CreateRoom from '@/components/CreateRoom';
 import Intro from '@/components/Intro';
 import NewGame from '@/components/NewGame';
+import Wait from '@/components/Wait/Wait';
 
 import {
   AUTHORIZE_ROUTE,
@@ -41,7 +42,7 @@ export const privateRoutes = [
   },
   {
     path: WAIT_FOR_PLAYERS,
-    Component: null,
+    Component: Wait,
   },
   // {
   //   path: GAME_ROUTE,

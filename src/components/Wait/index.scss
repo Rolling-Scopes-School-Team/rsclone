@@ -1,0 +1,27 @@
+.waitWrapper {
+  @apply flex justify-center items-center flex-col min-h-screen self-center;
+  color: rgba(140, 140, 140, 1);
+}
+.wait {
+  @apply flex flex-col items-center justify-center px-32 py-20 border-orange border;
+  border-radius: 10px;
+  @media (max-width: 1200px) {
+    @apply w-3/4;
+  }
+}
+
+.tableContainer {
+  @apply flex flex-col w-1/2 items-center;
+}
+
+.table {
+  @apply flex flex-col border min-w-full;
+  border: 1px solid #faad14;
+  border-radius: 3px;
+}
+
+.tableRow {
+  @apply flex flex-row justify-between cursor-pointer transform;
+  padding: 12px 50px 12px 25px;
+  border-bottom: 1px solid #faad14;
+}

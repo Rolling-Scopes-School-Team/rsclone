@@ -9,67 +9,9 @@
   }
 }
 
-.radioButton {
-  @apply mr-4;
-  display: block;
-  position: relative;
-  padding-left: 24px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 14px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.radioButton input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 16px;
-  width: 16px;
-  background-color: rgba(38, 38, 38, 1);
-  border: #FAAD14 1px solid;
-  border-radius: 50%;
-}
-
-.radioButton:hover input ~ .checkmark {
-  background-color: #FAAD14;
-}
-
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.radioButton input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.radioButton .checkmark:after {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #FAAD14;
-  top: 3px;
-  left: 3px;
-}
-
-
 form {
   @apply flex flex-col items-center justify-center px-32 py-20;
-  border: #FAAD14 1px solid;
+  border: #faad14 1px solid;
   border-radius: 10px;
   @media (max-width: 1200px) {
     @apply px-4 py-10;
@@ -105,4 +47,60 @@ p {
   @media (max-width: 500px) {
     @apply w-full mb-5;
   }
+}
+
+.radioButton {
+  @apply mr-4;
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radioButton input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: rgba(38, 38, 38, 1);
+  border: #faad14 1px solid;
+  border-radius: 50%;
+}
+
+.radioButton:hover input ~ .checkmark {
+  background-color: #faad14;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioButton input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radioButton .checkmark:after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #faad14;
+  top: 3px;
+  left: 3px;
 }

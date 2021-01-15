@@ -14,7 +14,7 @@
 }
 .table {
   @apply flex flex-col border min-w-full;
-  border: 1px solid #FAAD14;
+  border: 1px solid #faad14;
   border-radius: 3px;
   max-height: 300px;
   overflow-y: scroll;
@@ -23,11 +23,11 @@
 
 ::-webkit-scrollbar {
   width: 10px;
-  border-left: 1px solid #FAAD14;
+  border-left: 1px solid #faad14;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FAAD14;
+  background: #faad14;
   border-radius: 3px;
 }
 
@@ -38,7 +38,7 @@
 .tableRow {
   @apply flex flex-row justify-between cursor-pointer transform hover:bg-yellow-900;
   padding: 12px 50px 12px 25px;
-  border-bottom: 1px solid #FAAD14;
+  border-bottom: 1px solid #faad14;
 }
 .tableRowRoomInfo {
   @apply flex flex-row items-center;
