@@ -7,7 +7,7 @@ import styles from '@/components/Intro/Intro.scss';
 import { NEW_GAME_ROUTE, AUTHORIZE_ROUTE } from '@/utils/consts';
 
 const Intro: FC = (): JSX.Element => {
-  const user = 1; // ! temp
+  const user = 0; // ! temp
 
   return (
     <div className={styles.intro}>

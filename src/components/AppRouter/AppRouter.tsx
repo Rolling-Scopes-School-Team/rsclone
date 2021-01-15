@@ -1,15 +1,24 @@
 import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { publicRoutes, privateRoutes } from '@/routes';
-import { INTRO_ROUTE, NEW_GAME_ROUTE, CREATE_ROOM, WAIT_FOR_PLAYERS } from '@/utils/consts';
+import { RootState } from '@/store';
+import {
+  INTRO_ROUTE,
+  NEW_GAME_ROUTE,
+  CREATE_ROOM,
+  WAIT_FOR_PLAYERS,
+  AUTHORIZE_ROUTE,
+} from '@/utils/consts';
 
 const AppRouter: FC = (): JSX.Element => {
   // const { auth } = useContext(Context);
   // const [user] = useAuthState(auth);
-  const user = 1; // ! temp
+  // ! temp
+  const user = useSelector<RootState, RootState['user']>(state => state.user);
 
-  return user ? (
+  return user.name ? (
     <Switch>
       {privateRoutes.map(({ path, Component }) => (
         <Route key={path} path={path} component={Component} exact />
@@ -25,6 +34,7 @@ const AppRouter: FC = (): JSX.Element => {
         <Route key={path} path={path} component={Component} exact />
       ))}
       <Redirect to={INTRO_ROUTE} />
+      <Redirect to={AUTHORIZE_ROUTE} />
     </Switch>
   );
 };
