@@ -1,13 +1,40 @@
 import React, { useState } from 'react';
 import type { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import XIcon from '@/assets/svg/x.svg';
 import styles from '@/components/Authorize/Authorize.scss';
 import { INTRO_ROUTE } from '@/utils/consts';
 
+import { Auth, Registration } from '../../store/actionCreators';
+
 const Authorize: FC = (): JSX.Element => {
   const [option, setOption] = useState<'login' | 'registration'>('login');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
+
+  const registration = () => {
+    const data = {
+      email,
+      name,
+      password,
+    };
+
+    dispatch(Registration(data));
+  };
+
+  const login = () => {
+    const data = {
+      email,
+      password,
+    };
+
+    dispatch(Auth(data));
+  };
 
   return (
     <div className={styles.authorize}>
@@ -20,9 +47,19 @@ const Authorize: FC = (): JSX.Element => {
       {option === 'login' ? (
         <form className={styles.form}>
           <div className={styles.title}>Login</div>
-          <input className={styles.input} type="email" placeholder="E-mail" />
-          <input className={styles.input} type="password" placeholder="Password" />
-          <button className={styles.btn} type="button">
+          <input
+            onChange={e => setEmail(e.target.value)}
+            className={styles.input}
+            type="email"
+            placeholder="E-mail"
+          />
+          <input
+            onChange={e => setPassword(e.target.value)}
+            className={styles.input}
+            type="password"
+            placeholder="Password"
+          />
+          <button onClick={login} className={styles.btn} type="button">
             Sign In
           </button>
           <button className={styles.link} type="button" onClick={() => setOption('registration')}>
@@ -32,10 +69,25 @@ const Authorize: FC = (): JSX.Element => {
       ) : (
         <form className={styles.form}>
           <div className={styles.title}>Registration</div>
-          <input className={styles.input} type="text" placeholder="Name" />
-          <input className={styles.input} type="email" placeholder="E-mail" />
-          <input className={styles.input} type="password" placeholder="Password" />
-          <button className={styles.btn} type="button">
+          <input
+            onChange={e => setName(e.target.value)}
+            className={styles.input}
+            type="text"
+            placeholder="Name"
+          />
+          <input
+            onChange={e => setEmail(e.target.value)}
+            className={styles.input}
+            type="email"
+            placeholder="E-mail"
+          />
+          <input
+            onChange={e => setPassword(e.target.value)}
+            className={styles.input}
+            type="password"
+            placeholder="Password"
+          />
+          <button onClick={registration} className={styles.btn} type="button">
             Sign Up
           </button>
           <button className={styles.link} type="button" onClick={() => setOption('login')}>

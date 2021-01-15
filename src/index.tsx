@@ -7,6 +7,7 @@ import { CookiesProvider } from 'react-cookie';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import 'regenerator-runtime/runtime';
 
 import App from '@/App';
 import store from '@/store';
