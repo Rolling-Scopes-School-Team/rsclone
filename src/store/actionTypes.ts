@@ -1,5 +1,7 @@
-export const SET_NAME = 'SET_NAME';
-export const SET_EMAIL = 'SET_EMAIL';
+const ActionTypes = {
+  REGISTRATION: 'REGISTRATION',
+  AUTHORIZATION: 'AUTHORIZATION',
+  GAME: 'GAME',
+};
 
-// game
-export const ADD_USER = 'ADD_USER';
+export default ActionTypes;

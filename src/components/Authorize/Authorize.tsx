@@ -1,11 +1,13 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import type { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import XIcon from '@/assets/svg/x.svg';
 import styles from '@/components/Authorize/Authorize.scss';
 import { INTRO_ROUTE } from '@/utils/consts';
+
+import { Auth, Registration } from '../../store/actionCreators';
 
 const Authorize: FC = (): JSX.Element => {
   const [option, setOption] = useState<'login' | 'registration'>('login');
@@ -13,18 +15,16 @@ const Authorize: FC = (): JSX.Element => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const registartion = () => {
+  const dispatch = useDispatch();
+
+  const registration = () => {
     const data = {
       email,
       name,
       password,
     };
 
-    // eslint-disable-next-line no-void
-    void axios.post('http://localhost:3002/auth/create', data).then(res => {
-      // eslint-disable-next-line no-console
-      console.log(res);
-    });
+    dispatch(Registration(data));
   };
 
   const login = () => {
@@ -33,13 +33,7 @@ const Authorize: FC = (): JSX.Element => {
       password,
     };
 
-    // eslint-disable-next-line no-void
-    void axios
-      .post('http://localhost:3002/auth/authUser', data, { withCredentials: true })
-      .then(res => {
-        // eslint-disable-next-line no-console
-        console.log(res);
-      });
+    dispatch(Auth(data));
   };
 
   return (
@@ -93,7 +87,7 @@ const Authorize: FC = (): JSX.Element => {
             type="password"
             placeholder="Password"
           />
-          <button onClick={registartion} className={styles.btn} type="button">
+          <button onClick={registration} className={styles.btn} type="button">
             Sign Up
           </button>
           <button className={styles.link} type="button" onClick={() => setOption('login')}>

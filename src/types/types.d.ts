@@ -1,6 +1,7 @@
 interface IUser {
-  name: string | null;
+  name?: string | null;
   email: string | null;
+  password?: string | null;
 }
 
 type UsersState = {
@@ -11,3 +12,7 @@ type UserAction = {
   type: string;
   user: IUser;
 };
+
+export interface ResType {
+  data: IUser;
+}
