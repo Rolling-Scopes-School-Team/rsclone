@@ -46,7 +46,7 @@ function Table<T extends object = {}>({
     useSortBy,
     useBlockLayout,
     useResizeColumns,
-    usePagination,
+    usePagination
   );
 
   useEffect(() => {
@@ -65,7 +65,7 @@ function Table<T extends object = {}>({
                 <div
                   className={styles['th']}
                   {...column.getHeaderProps(
-                    column.getSortByToggleProps({ title: `Sort by ${column.Header!.toString()}` }),
+                    column.getSortByToggleProps({ title: `Sort by ${column.Header!.toString()}` })
                   )}
                 >
                   {column.render('Header')}
@@ -73,7 +73,7 @@ function Table<T extends object = {}>({
                     <div
                       className={classNames(
                         styles['resizer'],
-                        column.isResizing ? styles['isResizing'] : '',
+                        column.isResizing ? styles['isResizing'] : ''
                       )}
                       {...column.getResizerProps({
                         title: `Resize ${column.Header!.toString()} column`,
@@ -105,34 +105,25 @@ function Table<T extends object = {}>({
       <div className={styles['table-pagination']}>
         <button type="button" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
-        </button>
-        {' '}
+        </button>{' '}
         <button type="button" onClick={() => previousPage()} disabled={!canPreviousPage}>
           {'<'}
-        </button>
-        {' '}
+        </button>{' '}
         <button type="button" onClick={() => nextPage()} disabled={!canNextPage}>
           {'>'}
-        </button>
-        {' '}
+        </button>{' '}
         <button type="button" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
           {'>>'}
-        </button>
-        {' '}
+        </button>{' '}
         <span>
-          Page
-          {' '}
+          Page{' '}
           <strong>
-            {pageIndex + 1}
-            {' '}
-            of
+            {pageIndex + 1} of
             {pageOptions.length}
-          </strong>
-          {' '}
+          </strong>{' '}
         </span>
         <span>
-          | Go to page:
-          {' '}
+          | Go to page:{' '}
           <input
             type="number"
             min="1"
@@ -146,8 +137,7 @@ function Table<T extends object = {}>({
             }}
             style={{ width: '100px' }}
           />
-        </span>
-        {' '}
+        </span>{' '}
       </div>
     </Fragment>
   );
