@@ -1,6 +1,6 @@
 .createRoomWrapper {
   @apply flex justify-center items-center flex-col min-h-screen self-center;
-  color: rgba(140, 140, 140, 1);
+  color: rgb(140, 140, 140);
 }
 .createRoom {
   @apply flex flex-col w-1/2;
@@ -10,8 +10,7 @@
 }
 
 form {
-  @apply flex flex-col items-center justify-center px-32 py-20;
-  border: #faad14 1px solid;
+  @apply flex flex-col items-center justify-center px-32 py-20 border-orange border;
   border-radius: 10px;
   @media (max-width: 1200px) {
     @apply px-4 py-10;
@@ -90,12 +89,10 @@ p {
   display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
 .radioButton input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the indicator (dot/circle) */
 .radioButton .checkmark:after {
   width: 8px;
   height: 8px;

@@ -11,17 +11,29 @@
 }
 
 .tableContainer {
-  @apply flex flex-col w-1/2 items-center;
+  @apply flex flex-col w-full items-center;
 }
 
 .table {
   @apply flex flex-col border min-w-full;
+  min-height: 217px;
   border: 1px solid #faad14;
   border-radius: 3px;
 }
 
+.waitMaxPlayers {
+  @apply p-0 pt-4;
+}
+
 .tableRow {
-  @apply flex flex-row justify-between cursor-pointer transform;
-  padding: 12px 50px 12px 25px;
+  @apply flex flex-row justify-between cursor-pointer transform px-4 py-4;
   border-bottom: 1px solid #faad14;
+}
+
+.btn {
+  @apply mt-8 py-2 px-16 text-white border-orange border rounded-full font-medium
+  hover:bg-yellow-500 transition-colors duration-100 focus:outline-none;
+  @media (max-width: 500px) {
+    @apply w-full mb-5;
+  }
 }

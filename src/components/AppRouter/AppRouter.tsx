@@ -4,13 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { publicRoutes, privateRoutes } from '@/routes';
 import { RootState } from '@/store';
-import {
-  INTRO_ROUTE,
-  NEW_GAME_ROUTE,
-  CREATE_ROOM,
-  WAIT_FOR_PLAYERS,
-  AUTHORIZE_ROUTE,
-} from '@/utils/consts';
+import { INTRO_ROUTE, NEW_GAME_ROUTE, CREATE_ROOM, WAIT_FOR_PLAYERS } from '@/utils/consts';
 
 const AppRouter: FC = (): JSX.Element => {
   // const { auth } = useContext(Context);
@@ -34,7 +28,6 @@ const AppRouter: FC = (): JSX.Element => {
         <Route key={path} path={path} component={Component} exact />
       ))}
       <Redirect to={INTRO_ROUTE} />
-      <Redirect to={AUTHORIZE_ROUTE} />
     </Switch>
   );
 };

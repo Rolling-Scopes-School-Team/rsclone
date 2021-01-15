@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import styles from '@/components/Wait/index.scss';
+import styles from '@/components/Wait/Wait.scss';
+import { NEW_GAME_ROUTE } from '@/utils/consts';
 
 const Wait: FC = (): JSX.Element => (
   <div className={styles.waitWrapper}>
@@ -11,21 +13,14 @@ const Wait: FC = (): JSX.Element => (
           <div className={styles.tableRow}>
             <p>Name</p>
           </div>
-          <div className={styles.tableRow}>
-            <p>Name</p>
-          </div>
-          <div className={styles.tableRow}>
-            <p>Name</p>
-          </div>
-          <div className={styles.tableRow}>
-            <p>Name</p>
-          </div>
         </div>
       </div>
-      <p>This room can contain max 2 players</p>
-      <button className={styles.btn} type="button">
-        Back
-      </button>
+      <p className={styles.waitMaxPlayers}>This room can contain max 2 players</p>
+      <NavLink to={NEW_GAME_ROUTE}>
+        <button className={styles.btn} type="button">
+          Back
+        </button>
+      </NavLink>
     </div>
   </div>
 );
