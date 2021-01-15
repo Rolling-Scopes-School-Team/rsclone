@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 import ActionTypes from '@/store/actionTypes';
@@ -44,3 +45,5 @@ export const Auth = (user: IUser) => async (dispatch: (arg0: UserAction) => void
 };
 
 export default { Registration, Auth };
+
+

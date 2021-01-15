@@ -1,3 +1,4 @@
+
 const ActionTypes = {
   REGISTRATION: 'REGISTRATION',
   AUTHORIZATION: 'AUTHORIZATION',
@@ -5,3 +6,4 @@ const ActionTypes = {
 };
 
 export default ActionTypes;
+
