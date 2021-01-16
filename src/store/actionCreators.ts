@@ -43,4 +43,19 @@ export const Auth = (user: IUser) => async (dispatch: (arg0: UserAction) => void
   }
 };
 
+export const autoAuth = () => async (dispatch: (arg0: UserAction) => void) => {
+  try {
+    const response: ResType = await axios.get('http://localhost:3002/auth/autologin', {
+      withCredentials: true,
+    });
+
+    const { data } = response;
+
+    dispatch(authAC(data));
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.log(err);
+  }
+};
+
 export default { Registration, Auth };
