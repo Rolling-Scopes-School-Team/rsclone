@@ -5,9 +5,8 @@ import { NavLink } from 'react-router-dom';
 
 import XIcon from '@/assets/svg/x.svg';
 import styles from '@/components/Authorize/Authorize.scss';
+import { Auth, Registration } from '@/store/actionCreators';
 import { INTRO_ROUTE } from '@/utils/consts';
-
-import { Auth, Registration } from '../../store/actionCreators';
 
 const Authorize: FC = (): JSX.Element => {
   const [option, setOption] = useState<'login' | 'registration'>('login');
@@ -59,9 +58,11 @@ const Authorize: FC = (): JSX.Element => {
             type="password"
             placeholder="Password"
           />
-          <button onClick={login} className={styles.btn} type="button">
-            Sign In
-          </button>
+          <NavLink className={styles.btnLink} to={INTRO_ROUTE}>
+            <button onClick={login} className={styles.btn} type="button">
+              Sign In
+            </button>
+          </NavLink>
           <button className={styles.link} type="button" onClick={() => setOption('registration')}>
             Registration
           </button>
@@ -87,9 +88,11 @@ const Authorize: FC = (): JSX.Element => {
             type="password"
             placeholder="Password"
           />
-          <button onClick={registration} className={styles.btn} type="button">
-            Sign Up
-          </button>
+          <NavLink className={styles.btnLink} to={INTRO_ROUTE}>
+            <button onClick={registration} className={styles.btn} type="button">
+              Sign Up
+            </button>
+          </NavLink>
           <button className={styles.link} type="button" onClick={() => setOption('login')}>
             Login
           </button>

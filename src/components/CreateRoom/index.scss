@@ -1,0 +1,103 @@
+.createRoomWrapper {
+  @apply flex justify-center items-center flex-col min-h-screen self-center;
+  color: rgb(140, 140, 140);
+}
+.createRoom {
+  @apply flex flex-col w-1/2;
+  @media (max-width: 1200px) {
+    @apply w-3/4;
+  }
+}
+
+form {
+  @apply flex flex-col items-center justify-center px-32 py-20 border-orange border;
+  border-radius: 10px;
+  @media (max-width: 1200px) {
+    @apply px-4 py-10;
+  }
+}
+
+h3 {
+  @apply pb-12 font-medium text-2xl;
+  color: rgba(240, 240, 240, 1);
+}
+
+h4 {
+  @apply pt-14 self-start font-roboto font-medium text-base text-white pl-4;
+}
+p {
+  @apply self-start pl-4;
+}
+
+.input {
+  @apply py-2 px-4 rounded-full focus:outline-none border-orange border-2 bg-gray mb-5 w-full;
+}
+
+.radioButtonContainer {
+  @apply flex flex-row mt-4 self-start pl-4;
+}
+.btnContainer {
+  @apply flex flex-row mt-8 justify-around w-full;
+}
+
+.btn {
+  @apply py-2 px-12 text-white border-orange border rounded-full font-roboto font-medium
+  hover:bg-yellow-500 transition-colors duration-100 focus:outline-none;
+  @media (max-width: 500px) {
+    @apply w-full mb-5;
+  }
+}
+
+.radioButton {
+  @apply mr-4;
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radioButton input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: rgba(38, 38, 38, 1);
+  border: #faad14 1px solid;
+  border-radius: 50%;
+}
+
+.radioButton:hover input ~ .checkmark {
+  background-color: #faad14;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.radioButton input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radioButton .checkmark:after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #faad14;
+  top: 3px;
+  left: 3px;
+}
