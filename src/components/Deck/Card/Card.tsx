@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from '@/components/Deck/Card/index.scss';
+import cardData from '@/components/Deck/cardData';
 import { Card } from '@/components/Deck/types/types';
+import CardLogo from '@/components/icons/CardLogo';
 import Draw2 from '@/components/icons/Draw2';
 import Draw4CardsXxl from '@/components/icons/Draw4CardsXxl';
 import Reverse from '@/components/icons/Reverse';
@@ -12,10 +14,12 @@ import Wild from '@/components/icons/Wild';
 import WildXxl from '@/components/icons/WildXxl';
 
 const CardComponent: React.FC<Card> = ({ card, background }: Card): JSX.Element => {
+  const [visibility, setVisibility] = useState('');
+  const el = cardData[card];
   let smallIcon;
   let bigIcon;
 
-  switch (card.description) {
+  switch (el.description) {
     case 'skip':
       smallIcon = <Skip />;
       bigIcon = <SkipXxl />;
@@ -37,14 +41,27 @@ const CardComponent: React.FC<Card> = ({ card, background }: Card): JSX.Element 
       bigIcon = <Draw4CardsXxl />;
       break;
     default:
-      smallIcon = card.description;
-      bigIcon = card.description;
+      smallIcon = el.description;
+      bigIcon = el.description;
   }
+
   return (
-    <div className={[styles.card, styles[background]].join(' ')}>
-      <div className={styles.cardTop}>{smallIcon}</div>
-      <div className={styles.cardCenter}>{bigIcon}</div>
-      <div className={styles.cardBottom}>{smallIcon}</div>
+    <div
+      className={[styles.cardWrapper, styles[visibility]].join(' ')}
+      onMouseOver={() => setVisibility('showBack')}
+      onMouseLeave={() => setVisibility('')}
+      onFocus={() => false}
+    >
+      <div className={[styles.card, styles.front, styles[background]].join(' ')}>
+        <div className={styles.cardTop}>{smallIcon}</div>
+        <div className={styles.cardCenter}>{bigIcon}</div>
+        <div className={styles.cardBottom}>{smallIcon}</div>
+      </div>
+      <div className={[styles.card, styles.back, styles['dark']].join(' ')}>
+        <div className={styles.cardCenter}>
+          <CardLogo />
+        </div>
+      </div>
     </div>
   );
 };

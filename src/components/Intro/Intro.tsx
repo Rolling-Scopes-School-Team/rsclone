@@ -1,20 +1,20 @@
 import React from 'react';
 import type { FC } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import UnoLogo from '@/assets/svg/uno-logo.svg';
 import styles from '@/components/Intro/Intro.scss';
-import { RootState } from '@/store';
+// import { RootState } from '@/store';
 import { NEW_GAME_ROUTE, AUTHORIZE_ROUTE } from '@/utils/consts';
 
 const Intro: FC = (): JSX.Element => {
-  const user = useSelector<RootState, RootState['user']>(state => state.user); // ! temp
-
+  // const user = useSelector<RootState, RootState['user']>(state => state.user); // ! temp
+  const user = 1;
   return (
     <div className={styles.intro}>
       <UnoLogo className={styles.logo} />
-      {user.name ? (
+      {user ? (
         <NavLink to={NEW_GAME_ROUTE}>
           <button type="button" className={styles.btn}>
             Play

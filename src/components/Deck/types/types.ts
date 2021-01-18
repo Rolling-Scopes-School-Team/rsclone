@@ -17,14 +17,23 @@ export type ICardData = {
 };
 
 export interface Card {
-  background: string;
-  card: {
-    countOfCards: number;
-    description: string;
-    effect: null | string;
-    fourColors: boolean;
-    points: number;
-  };
+  background: 'yellow' | 'red' | 'dark' | 'blue' | 'green';
+  card:
+  | 'zero'
+  | 'one'
+  | 'two'
+  | 'three'
+  | 'four'
+  | 'five'
+  | 'six'
+  | 'seven'
+  | 'eight'
+  | 'nine'
+  | 'skip'
+  | 'reverse'
+  | 'draw2'
+  | 'wild'
+  | 'wildDraw4';
 }
 
 export interface ICard {
