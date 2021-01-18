@@ -1,4 +1,4 @@
-import { ICardData } from '@/components/Deck/types/types';
+import { ICardData } from '@/types/types';
 
 const cardData: ICardData = {
   zero: {

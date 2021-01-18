@@ -10,7 +10,6 @@ import { NEW_GAME_ROUTE, AUTHORIZE_ROUTE } from '@/utils/consts';
 
 const Intro: FC = (): JSX.Element => {
   const user = useSelector<RootState, RootState['user']>(state => state.user); // ! temp
-
   return (
     <div className={styles.intro}>
       <UnoLogo className={styles.logo} />
