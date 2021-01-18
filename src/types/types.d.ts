@@ -16,3 +16,5 @@ type UserAction = {
 export interface ResType {
   data: IUser;
 }
+
+type Position = 'top' | 'bottom' | 'right' | 'left';
