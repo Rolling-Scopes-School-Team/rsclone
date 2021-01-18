@@ -1,15 +1,22 @@
-import React, { FC } from 'react';
-import { useSelector } from 'react-redux';
+import React, { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { publicRoutes, privateRoutes } from '@/routes';
 import { RootState } from '@/store';
+import { autoAuth } from '@/store/actionCreators';
 import { INTRO_ROUTE } from '@/utils/consts';
 
 const AppRouter: FC = (): JSX.Element => {
   // const { auth } = useContext(Context);
   // const [user] = useAuthState(auth);
-  // ! temp
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(autoAuth());
+  }, []);
+
   const user = useSelector<RootState, RootState['user']>(state => state.user);
 
   return user.name ? (
