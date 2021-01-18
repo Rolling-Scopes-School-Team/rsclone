@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import Card from '@/components/Card/Card';
 import styles from '@/components/CreateRoom/index.scss';
-import Deck from '@/components/Deck/Deck';
 import { NEW_GAME_ROUTE, WAIT_FOR_PLAYERS } from '@/utils/consts';
 
 const CreateRoom: FC = (): JSX.Element => (
   <div className={styles.createRoomWrapper}>
-    <Deck />
+    <Card card="wildDraw4" background="dark" front />
     <div className={styles.createRoom}>
       <form className={styles.form}>
         <h3 className={styles.header}>Create Room</h3>

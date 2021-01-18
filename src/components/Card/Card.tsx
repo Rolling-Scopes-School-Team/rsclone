@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import styles from '@/components/Deck/Card/index.scss';
-import cardData from '@/components/Deck/cardData';
-import { Card } from '@/components/Deck/types/types';
+import cardData from '@/components/Card/cardData';
+import styles from '@/components/Card/index.scss';
 import CardLogo from '@/components/icons/CardLogo';
 import Draw2 from '@/components/icons/Draw2';
 import Draw4CardsXxl from '@/components/icons/Draw4CardsXxl';
@@ -12,9 +11,12 @@ import Skip from '@/components/icons/Skip';
 import SkipXxl from '@/components/icons/SkipXxl';
 import Wild from '@/components/icons/Wild';
 import WildXxl from '@/components/icons/WildXxl';
+import { CardProps } from '@/types/types';
 
-const CardComponent: React.FC<Card> = ({ card, background }: Card): JSX.Element => {
-  const [visibility, setVisibility] = useState('');
+// Usage "front === true" - show front of card, "front === false" - show back of card;
+const Card: React.FC<CardProps> = ({ card, background, front }: CardProps): JSX.Element => {
+  const visibility = front ? '' : 'showBack';
+
   const el = cardData[card];
   let smallIcon;
   let bigIcon;
@@ -46,12 +48,7 @@ const CardComponent: React.FC<Card> = ({ card, background }: Card): JSX.Element 
   }
 
   return (
-    <div
-      className={[styles.cardWrapper, styles[visibility]].join(' ')}
-      onMouseOver={() => setVisibility('showBack')}
-      onMouseLeave={() => setVisibility('')}
-      onFocus={() => false}
-    >
+    <div className={[styles.cardWrapper, styles[visibility]].join(' ')}>
       <div className={[styles.card, styles.front, styles[background]].join(' ')}>
         <div className={styles.cardTop}>{smallIcon}</div>
         <div className={styles.cardCenter}>{bigIcon}</div>
@@ -66,4 +63,4 @@ const CardComponent: React.FC<Card> = ({ card, background }: Card): JSX.Element 
   );
 };
 
-export default CardComponent;
+export default Card;
