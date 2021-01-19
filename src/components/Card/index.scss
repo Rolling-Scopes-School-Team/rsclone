@@ -14,9 +14,35 @@
   rounded
   font-normal
   transform
-  hover:scale-105 cursor-pointer
+  cursor-pointer
   leading-9;
   min-width: 106px;
+  backface-visibility: hidden;
+}
+
+.cardWrapper {
+  @apply relative;
+}
+
+.front,
+.back {
+  @apply transition duration-500;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+.front {
+  @apply absolute;
+}
+
+.showBack {
+  .front {
+    transform: rotateY(180deg);
+  }
+  .back {
+    transform: rotateY(360deg);
+  }
 }
 .cardTop {
   @apply self-start text-2xl absolute top-1 left-1.5 leading-6;
