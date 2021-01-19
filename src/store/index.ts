@@ -3,6 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 import gameReducer from '@/store/reducers/gameReducer';
+import roomReducer from '@/store/reducers/roomReducer';
 import userReducer from '@/store/reducers/userReducer';
 
 const persistedState = {};
@@ -10,6 +11,7 @@ const persistedState = {};
 const reducers = combineReducers({
   user: userReducer,
   game: gameReducer,
+  room: roomReducer,
 });
 
 const store = createStore(reducers, persistedState, composeWithDevTools(applyMiddleware(thunk)));

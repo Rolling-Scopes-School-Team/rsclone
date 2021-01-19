@@ -12,6 +12,9 @@ const userReducer = (state: IUser = initialState, action: UserAction): IUser => 
       return action.user;
 
     case ActionTypes.AUTHORIZATION:
+      // eslint-disable-next-line no-console
+      console.log(action);
+
       return action.user;
 
     default:

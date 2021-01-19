@@ -14,5 +14,27 @@ type UserAction = {
 };
 
 export interface ResType {
-  data: IUser;
+  data: Data;
+}
+
+interface Data {
+  user: IUser;
+  room: Room;
+}
+
+interface Room {
+  name: string;
+
+  size: number;
+
+  fullness?: number;
+
+  users?: string;
+
+  password: string;
+}
+
+interface CreateRoomAction {
+  type: string;
+  room: Room;
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import ActionTypes from '@/store/actionTypes';
-import { IUser, ResType, UserAction } from '@/types/types';
+import { CreateRoomAction, IUser, ResType, Room, UserAction } from '@/types/types';
 
 const registrationAC = (data: IUser): UserAction =>
   ({
@@ -15,28 +15,38 @@ const authAC = (data: IUser): UserAction =>
     user: data,
   } as UserAction);
 
-export const Registration = (user: IUser) => async (dispatch: (arg0: UserAction) => void) => {
+const createRoomAC = (data: Room): CreateRoomAction =>
+  ({
+    type: ActionTypes.CREATE_ROOM,
+    room: data,
+  } as CreateRoomAction);
+
+export const Registration = (userData: IUser) => async (dispatch: (arg0: UserAction) => void) => {
   try {
-    const response: ResType = await axios.post('http://localhost:3002/auth/create', user);
+    const response: ResType = await axios.post('http://localhost:3002/auth/create', userData);
 
     const { data } = response;
 
-    dispatch(registrationAC(data));
+    const { user } = data;
+
+    dispatch(registrationAC(user));
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log(err);
   }
 };
 
-export const Auth = (user: IUser) => async (dispatch: (arg0: UserAction) => void) => {
+export const Auth = (userData: IUser) => async (dispatch: (arg0: UserAction) => void) => {
   try {
-    const response: ResType = await axios.post('http://localhost:3002/auth/authUser', user, {
+    const response: ResType = await axios.post('http://localhost:3002/auth/authUser', userData, {
       withCredentials: true,
     });
 
     const { data } = response;
 
-    dispatch(authAC(data));
+    const { user } = data;
+
+    dispatch(authAC(user));
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log(err);
@@ -51,11 +61,32 @@ export const autoAuth = () => async (dispatch: (arg0: UserAction) => void) => {
 
     const { data } = response;
 
-    dispatch(authAC(data));
+    const { user } = data;
+
+    dispatch(authAC(user));
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log(err);
   }
 };
 
-export default { Registration, Auth };
+export const createRoomAPI = (RoomData: Room) => async (
+  dispatch: (arg0: CreateRoomAction) => void,
+) => {
+  try {
+    const response: ResType = await axios.post('http://localhost:3002/game/createRoom', RoomData, {
+      withCredentials: true,
+    });
+
+    const { data } = response;
+
+    const { room } = data;
+
+    dispatch(createRoomAC(room));
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.log(err);
+  }
+};
+
+export default { Registration, Auth, autoAuth };
