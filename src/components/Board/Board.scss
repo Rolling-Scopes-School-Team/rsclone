@@ -4,12 +4,18 @@
   .table {
     @apply px-2 py-1 flex gap-4;
 
+    .card {
+    }
+
+    .deck {
+    }
+
     .container {
       @apply flex flex-col justify-center gap-2;
 
       .color,
       .button {
-        @apply w-24 h-16 rounded-lg;
+        @apply w-24 h-16 rounded-2xl;
       }
 
       .button {

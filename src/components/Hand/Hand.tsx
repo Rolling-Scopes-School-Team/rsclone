@@ -1,17 +1,33 @@
 import React from 'react';
 
-import Card from '@/components/Deck/Card/Card';
-import cardData from '@/components/Deck/cardData';
+import Card from '@/components/Card';
 import styles from '@/components/Hand/Hand.scss';
+import { IHand } from '@/types/types';
 
-const Hand: React.FC = (): JSX.Element => (
-  <div className={styles.hand}>
-    <Card card={cardData['zero']} background="red" />
-    <Card card={cardData['seven']} background="yellow" />
-    <Card card={cardData['zero']} background="green" />
-    <Card card={cardData['wildDraw4']} background="dark" />
-    <Card card={cardData['zero']} background="blue" />
-  </div>
-);
+const Hand: React.FC<IHand> = ({ amount, cards }): JSX.Element => {
+  if (cards) {
+    return (
+      <div className={styles.hand}>
+        {cards?.map(id => (
+          <Card id={id} />
+        ))}
+      </div>
+    );
+  }
+
+  if (amount) {
+    return (
+      <div className={styles.hand}>
+        {Array(amount)
+          .fill('')
+          .map(() => (
+            <Card />
+          ))}
+      </div>
+    );
+  }
+
+  return <div />;
+};
 
 export default Hand;

@@ -4,6 +4,12 @@ interface IUser {
   password?: string | null;
 }
 
+interface IPlayer {
+  name: string;
+  cards: CardId[] | null;
+  amount: number | null;
+}
+
 type UsersState = {
   users: IUser[];
 };
@@ -139,6 +145,11 @@ type CardProps = {
   name?: CardName;
   id?: CardId;
 };
+
+interface IHand {
+  amount?: number | null;
+  cards?: CardId[] | null;
+}
 
 interface ICard {
   id: CardId;
