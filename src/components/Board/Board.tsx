@@ -3,11 +3,9 @@ import React, { Fragment } from 'react';
 
 import UnoLogo from '@/assets/svg/uno-logo.svg';
 import styles from '@/components/Board/Board.scss';
-import Card from '@/components/Deck/Card/Card';
+import Card from '@/components/Card/Card';
 import Hand from '@/components/Hand';
 import { IUser, Position } from '@/types/types';
-
-import cardData from '../Deck/cardData';
 
 // import { useSelector } from 'react-redux';
 // import { RootState } from '@/store';
@@ -63,10 +61,10 @@ const Board: React.FC = (): JSX.Element => {
     <div className={styles.field}>
       <div className={styles.table}>
         <div className={styles.deck}>
-          <Card card={cardData['zero']} background="red" />
+          <Card name="red-zero" />
         </div>
         <div className={styles.card}>
-          <Card card={cardData['zero']} background="blue" />
+          <Card />
         </div>
         <div className={styles.container}>
           <div className={styles.color} style={{ background: 'red' }} />
