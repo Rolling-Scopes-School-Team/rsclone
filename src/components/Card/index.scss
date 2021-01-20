@@ -14,10 +14,11 @@
   rounded
   font-normal
   transform
-  cursor-pointer
   leading-9;
+  /* cursor-pointer */
   min-width: 106px;
   backface-visibility: hidden;
+  background: rgba(40, 37, 37, 1);
 }
 
 .cardWrapper {
@@ -31,9 +32,6 @@
 
 .back {
   transform: rotateY(180deg);
-}
-.front {
-  @apply absolute;
 }
 
 .showBack {
@@ -53,9 +51,7 @@
 .cardBottom {
   @apply self-end text-2xl transform rotate-180 absolute bottom-1 right-1.5 leading-6;
 }
-.dark {
-  background: rgba(40, 37, 37, 1);
-}
+
 .yellow {
   background: rgba(255, 208, 55, 1);
 }
