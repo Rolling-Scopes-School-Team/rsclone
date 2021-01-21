@@ -20,6 +20,7 @@ export interface ResType {
 interface Data {
   user: IUser;
   room: Room;
+  rooms: Array<Room>;
 }
 
 interface Room {
@@ -31,12 +32,19 @@ interface Room {
 
   users?: string;
 
-  password: string;
+  password?: string;
 }
+
+type Rooms = Array<Room>;
 
 interface CreateRoomAction {
   type: string;
   room: Room;
+}
+
+interface GetRoomsAction {
+  type: string;
+  rooms: Array<Room>;
 }
 
 export type ICardData = {
