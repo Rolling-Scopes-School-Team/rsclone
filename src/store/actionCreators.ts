@@ -1,7 +1,15 @@
 import axios from 'axios';
 
 import ActionTypes from '@/store/actionTypes';
-import { CreateRoomAction, IUser, ResType, Room, UserAction } from '@/types/types';
+import {
+  CreateRoomAction,
+  IUser,
+  ResType,
+  Room,
+  UserAction,
+  Rooms,
+  GetRoomsAction,
+} from '@/types/types';
 
 const registrationAC = (data: IUser): UserAction =>
   ({
@@ -20,6 +28,12 @@ const createRoomAC = (data: Room): CreateRoomAction =>
     type: ActionTypes.CREATE_ROOM,
     room: data,
   } as CreateRoomAction);
+
+const getRoomsAC = (data: Rooms): GetRoomsAction =>
+  ({
+    type: ActionTypes.FETCH_ROOMS,
+    rooms: data,
+  } as GetRoomsAction);
 
 export const Registration = (userData: IUser) => async (dispatch: (arg0: UserAction) => void) => {
   try {
@@ -83,6 +97,23 @@ export const createRoomAPI = (RoomData: Room) => async (
     const { room } = data;
 
     dispatch(createRoomAC(room));
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.log(err);
+  }
+};
+
+export const fetchRoomsAPI = () => async (dispatch: (arg0: GetRoomsAction) => void) => {
+  try {
+    const response: ResType = await axios.get('http://localhost:3002/game/getRooms', {
+      withCredentials: true,
+    });
+
+    const { data } = response;
+
+    const { rooms } = data;
+
+    dispatch(getRoomsAC(rooms));
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log(err);

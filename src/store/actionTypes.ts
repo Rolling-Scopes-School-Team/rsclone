@@ -3,6 +3,7 @@ const ActionTypes = {
   AUTHORIZATION: 'AUTHORIZATION',
   GAME: 'GAME',
   CREATE_ROOM: 'CREATE_ROOM',
+  FETCH_ROOMS: 'FETCH_ROOMS',
 };
 
 export default ActionTypes;
