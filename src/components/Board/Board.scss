@@ -1,0 +1,65 @@
+.field {
+  @apply flex justify-center items-center w-full h-screen;
+
+  .table {
+    @apply px-2 py-1 flex gap-4;
+
+    .card {
+    }
+
+    .deck {
+    }
+
+    .container {
+      @apply flex flex-col justify-center gap-2;
+
+      .color,
+      .button {
+        @apply w-24 h-16 rounded-2xl;
+      }
+
+      .button {
+        @apply p-2 border border-orange outline-none;
+      }
+    }
+  }
+}
+
+.board {
+  @apply min-w-full min-h-screen;
+}
+
+.player {
+  @apply absolute flex gap-4;
+}
+
+.name {
+  @apply px-2 py-1 text-lg border border-orange rounded;
+  color: #f0f0f0;
+}
+
+.player-top,
+.player-bottom {
+  @apply w-screen items-center;
+}
+
+.player-left,
+.player-right {
+  @apply h-screen items-center;
+}
+
+.player-top {
+  @apply top-4 flex-col-reverse;
+}
+
+.player-bottom {
+  @apply bottom-4 flex-col;
+}
+
+.player-left {
+  @apply left-4;
+}
+
+.player-right {
+  @apply right-4;
+}

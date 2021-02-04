@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 
 import cardData from '@/components/Card/cardData';
@@ -11,17 +12,34 @@ import Skip from '@/components/icons/Skip';
 import SkipXxl from '@/components/icons/SkipXxl';
 import Wild from '@/components/icons/Wild';
 import WildXxl from '@/components/icons/WildXxl';
-import { CardProps } from '@/types/types';
+import { CardProps, ICard } from '@/types/types';
 
-// Usage "front === true" - show front of card, "front === false" - show back of card;
-const Card: React.FC<CardProps> = ({ card, background, front }: CardProps): JSX.Element => {
-  const visibility = front ? '' : 'showBack';
+// use name or id prop
+// if there is no props => card back
+// name?: ICardName, id?: ICardId
+const Card: React.FC<CardProps> = ({ name, id }: CardProps): JSX.Element => {
+  let cardConfig: ICard;
 
-  const el = cardData[card];
+  if (name) {
+    cardConfig = cardData[name];
+  } else if (id) {
+    cardConfig = Object.values(cardData).find(obj => obj.id === id) || cardData['red-zero'];
+  } else {
+    return (
+      <div className={styles.cardWrapper}>
+        <div className={styles.card}>
+          <div className={styles.cardCenter}>
+            <CardLogo />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   let smallIcon;
   let bigIcon;
 
-  switch (el.description) {
+  switch (cardConfig.description) {
     case 'skip':
       smallIcon = <Skip />;
       bigIcon = <SkipXxl />;
@@ -43,21 +61,16 @@ const Card: React.FC<CardProps> = ({ card, background, front }: CardProps): JSX.
       bigIcon = <Draw4CardsXxl />;
       break;
     default:
-      smallIcon = el.description;
-      bigIcon = el.description;
+      smallIcon = cardConfig.description;
+      bigIcon = cardConfig.description;
   }
 
   return (
-    <div className={[styles.cardWrapper, styles[visibility]].join(' ')}>
-      <div className={[styles.card, styles.front, styles[background]].join(' ')}>
+    <div className={styles.cardWrapper}>
+      <div className={classNames(styles.card, cardConfig.color ? styles[cardConfig.color] : '')}>
         <div className={styles.cardTop}>{smallIcon}</div>
         <div className={styles.cardCenter}>{bigIcon}</div>
         <div className={styles.cardBottom}>{smallIcon}</div>
-      </div>
-      <div className={[styles.card, styles.back, styles['dark']].join(' ')}>
-        <div className={styles.cardCenter}>
-          <CardLogo />
-        </div>
       </div>
     </div>
   );
